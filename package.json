@@ -1,11 +1,24 @@
 {
   "name": "classwork16062018",
-  "version": "1.0.0",
-  "description": "",
+  "version": "0.0.1",
+  "description": "Learn react tutorial",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
-  "license": "ISC"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fac30ff/classwork16062018a.git"
+  },
+  "author": "Igor Rudenko",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fac30ff/classwork16062018a/issues"
+  },
+  "dependencies": {
+    "express": "^4.16.3",
+    "react": "^16.4.1",
+    "react-dom": "^16.4.1",
+    "react-scripts": "^1.1.4"
+  }
 }
