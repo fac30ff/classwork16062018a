@@ -22,6 +22,10 @@ app.get('/api/ping', (req, res) => {
    });
 });
 
+app.get('/api/author', (req, res) => {
+    res.json(required('./data/fakeData2'));
+});
+
 app.get('/api/data', (req, res) => {
     res.json(data);
 });

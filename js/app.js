@@ -13,7 +13,14 @@ const Article = (props) => {
         <p className="news__text">{text}</p>
     </div>
     );
+};
+Article.defaultProp = {
+    author: "Stranger"
+}
 
+Article.propTypes = {
+  author: PropTypes.string.isRequired,
+  text: PropTypes.string.isRequired
 };
 
 const News = (props) => {
@@ -32,13 +39,49 @@ const News = (props) => {
   );
 };
 
+News.propTypes = {
+    data: PropTypes.array.isRequired
+};
+
 const Comments = () => (
     <div className="comments">
         Empty comments
     </div>
 );
 
-const App = () => (
+class App extends React.Component {
+    constructor(props) {
+      super(props);
+      this.state = {data: [], isLoading: false};
+    };
+
+    componentDidMount() {
+        this.setState({isLoading: true}, () => {
+            this.state.isLoading
+        });
+        fetch("/api/author")
+            .then(res => res.json())
+            .then(news => {
+                console.log(news);
+                this.setState({data: news, isLoading: false})
+            });
+    };
+
+  render () {
+      const {isLoading} = this.state;
+      return (
+          <div className="app">
+              App title
+              {isLoading && <div>Loading ...</div>}
+              <News data={this.state.data}/>
+              <Comments/>
+          </div>
+      );
+  };
+};
+
+
+const App2 = () => (
     <div className="app">
         App title
         <News data={newsArray}/>
