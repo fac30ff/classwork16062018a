@@ -1,8 +1,9 @@
-const News = () => (
-  <div className="news">
-      Empty news
-  </div>
-);
+const News = () => {
+  let date = new Date().toISOString();
+  return (
+      <div className="news">{`Empty new for date ${date}.`}</div>
+  );
+};
 
 const Comments = () => (
     <div className="comments">
